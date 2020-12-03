@@ -36,7 +36,7 @@ pub fn solve_part2(input: &[Vec<bool>]) -> u32 {
         .iter()
         .map(|&(right, down)| {
             let mut pos = START;
-            dbg!(input
+            input
                 .iter()
                 .step_by(down)
                 .map(|line| {
@@ -44,7 +44,7 @@ pub fn solve_part2(input: &[Vec<bool>]) -> u32 {
                     pos = next_right(line.len(), pos, right);
                     res
                 })
-                .sum::<u32>())
+                .sum::<u32>()
         })
         .product()
 }
