@@ -1,6 +1,5 @@
 use aoc_runner_derive::aoc;
 use aoc_runner_derive::aoc_generator;
-use std::collections::HashSet;
 
 #[aoc_generator(day10)]
 pub fn input_generator(input: &str) -> Vec<usize> {
