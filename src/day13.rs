@@ -45,14 +45,20 @@ pub fn solve_part1(input: &Schedule) -> usize {
 
 /// Find minimum x that satisfies x = p⁻¹ (mod q). This function does not
 /// guarantee a unique result if `p` and `q` are not coprime.
-/// ```
-/// # use aoc_2020::day13::modulo_inverse;
+/// ```rust,no_run
 /// assert_eq!(5 * modulo_inverse(5, 7) % 7, 1);
 /// ```
-pub fn modulo_inverse(p: u128, q: u128) -> u128 {
+fn modulo_inverse(p: u128, q: u128) -> u128 {
     (1..q)
         .find(|i| (i * p) % q == 1)
         .expect("p and q must not be coprime")
+}
+
+#[test]
+fn test_modulo_inverse() {
+    let x = modulo_inverse(5, 7);
+    assert_eq!(x, 3);
+    assert_eq!(5 * x % 7, 1);
 }
 
 #[aoc(day13, part2)]
