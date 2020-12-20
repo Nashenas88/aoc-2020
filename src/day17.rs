@@ -124,6 +124,7 @@ impl<'a> Iterator for Neighbors4D<'a> {
     }
 }
 
+#[allow(dead_code)]
 fn print_set(set: &HashSet<Point>) {
     let (min_x, min_y, min_z, min_w, max_x, max_y, max_z, max_w) = set.iter().fold(
         (
